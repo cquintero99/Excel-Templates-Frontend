@@ -9,6 +9,8 @@ function seeProducts(){
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk
                     of the card's content.</p>
                 <a href="#" class="btn bg-success text-white">Add to cart</a>
+                <button type="button" class="btn btn-block bg-info mb-3" data-bs-toggle="modal" data-bs-target="#modal-notification">Information</button>
+                
             </div>
         </div>
     </div>`
