@@ -1,7 +1,7 @@
 function seeProducts(){
     let body=""
     for (let i = 0; i < 24; i++) {
-        body+=`<div class="col justify-content-center text-center">
+        body+=`<div class="col-sm-6 col-md-4 col-lg-3 mx-1">
         <div class="card mt-3 " style="width: 18rem;">
             <img class="card-img-top" src="./img/plantilla.png" alt="Card image cap">
             <div class="card-body">
