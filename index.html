@@ -22,7 +22,7 @@
     <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show   bg-gray-100">
+<body class="g-sidenav-show   bg-gray-100" onload="seeProducts()">
     <div class="min-height-300 bg-success position-absolute w-100"></div>
 
 
@@ -45,7 +45,18 @@
                 </form>
             </div>
         </nav>
-
+        <ul class="nav justify-content-center ">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            
+          </ul>
         <div class="container-fluid py-4">
 
             <div class="row mt-4">
@@ -129,52 +140,10 @@
                             
                         </div>
                         <div class="card-body p-3">
-                            <div class="row mt-4 text-center justify-content-center">
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="./img/plantilla.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                                of the card's content.</p>
-                                            <a href="#" class="btn bg-success text-white">Go somewhere</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="./img/plantilla.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                                of the card's content.</p>
-                                            <a href="#" class="btn bg-success text-white">Go somewhere</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="./img/plantilla.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                                of the card's content.</p>
-                                            <a href="#" class="btn bg-success text-white">Go somewhere</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="./img/plantilla.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                                of the card's content.</p>
-                                            <a href="#" class="btn bg-success text-white">Go somewhere</a>
-                                        </div>
-                                    </div>
-                                </div>
-                
+                            <div class="row text-center justify-content-center" id="products">
+                    
+                    
+    
                             </div>
 
                         </div>
@@ -182,7 +151,7 @@
                 </div>
                
             </div>
-            
+           
             
             <footer class="footer pt-3  ">
                 <div class="container-fluid">
@@ -232,6 +201,7 @@
     <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="./assets/js/plugins/chartjs.min.js"></script>
     <script src="./script/ubicacion.js"></script>
+    <script src="./script/products.js"></script>
     <script>
         var ctx1 = document.getElementById("chart-line").getContext("2d");
 
