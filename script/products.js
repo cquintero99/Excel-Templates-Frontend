@@ -1,3 +1,16 @@
+function countdown() {
+  var now = new Date();
+  var endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+  var timeLeft = endOfDay - now;
+
+  var hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+  var minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+  var seconds = Math.floor((timeLeft / 1000) % 60);
+
+  document.getElementById('countdown').innerHTML = hours + 'h : ' + minutes + 'm : ' + seconds + 's';
+
+  setTimeout(countdown, 1000);
+}
 function seeProducts(){
     let body=""
     for (let i = 0; i < 24; i++) {
