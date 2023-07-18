@@ -49,6 +49,7 @@ function seeProducts(){
             <a href="javascript:;" class="btn bg-success w-100 mt-4 mb-0 text-white">
               Get started
             </a>
+               
           </div>
         </div>
       </div>`
