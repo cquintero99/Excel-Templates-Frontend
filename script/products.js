@@ -46,7 +46,7 @@ function seeProducts(){
                 <b>500</b> Messages
               </li>
             </ul>
-            <a href="javascript:;" class="btn bg-success w-100 mt-4 mb-0">
+            <a href="javascript:;" class="btn bg-success w-100 mt-4 mb-0 text-white">
               Get started
             </a>
           </div>
