@@ -7975,6 +7975,10 @@ fieldset:disabled .btn {
   color: #000 !important;
   background-color: RGBA(251, 99, 64, var(--bs-bg-opacity, 1)) !important;
 }
+.text-bg-yellow {
+  color: yellow !important;
+  background-color: RGBA(251, 99, 64, var(--bs-bg-opacity, 1)) !important;
+}
 
 .text-bg-danger {
   color: #000 !important;
@@ -10526,6 +10530,9 @@ fieldset:disabled .btn {
 .text-warning {
   color: #fb6340 !important;
 }
+.text-yellow {
+  color: #F1E70A !important;
+}
 
 .text-danger {
   color: #f5365c !important;
@@ -10598,6 +10605,7 @@ fieldset:disabled .btn {
 .bg-warning {
   background-color: #fb6340 !important;
 }
+
 
 .bg-danger {
   background-color: #f5365c !important;
@@ -21907,6 +21915,10 @@ svg.text-info .color-background {
 svg.text-warning .color-foreground {
   fill: #fb6340;
 }
+svg.text-yellow .color-foreground {
+  fill: yellow;
+}
+
 
 svg.text-warning .color-background {
   fill: #fbb140;

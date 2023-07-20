@@ -11,6 +11,16 @@ function countdown() {
 
   setTimeout(countdown, 1000);
 }
+ 
+
+const templete= document.getElementById("templete")
+
+templete.addEventListener("click",()=>{
+  setTimeout(()=>{
+    
+  window.location.href="#list-product"
+  },500)
+})
 function seeProducts(){
     let body=""
     for (let i = 0; i < 24; i++) {

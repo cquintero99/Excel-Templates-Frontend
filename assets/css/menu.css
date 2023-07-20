@@ -3,21 +3,19 @@
  
  .logo-image {
     height: 110px;
-    width: 210px;
+    width: 310px;
   }
 
   /* Media Query para pantallas más pequeñas */
   @media (max-width: 768px) {
     .logo-image {
       height: 80px;
-      width: 140px;
+      width: 250px;
     }
     .titulo{
         display: none;
     }
-    .colum1{
-        display: none;
-    }
+    
     .titulo2{
         display: block;
     }
