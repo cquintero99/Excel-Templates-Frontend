@@ -1,0 +1,29 @@
+ /* Estilos para pantallas más grandes */
+ .logo-image {
+    height: 110px;
+    width: 210px;
+  }
+
+  /* Media Query para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .logo-image {
+      height: 80px;
+      width: 140px;
+    }
+    .titulo{
+        display: none;
+    }
+    .colum1{
+        display: none;
+    }
+    .titulo2{
+        display: block;
+    }
+  }
+  @media (min-width: 969px) {
+    /* Aquí puedes agregar tus estilos CSS para pantallas grandes */
+    .titulo2{
+        display: none;
+        align-items: center;
+    }
+}
