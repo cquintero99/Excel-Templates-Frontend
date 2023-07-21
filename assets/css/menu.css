@@ -5,7 +5,12 @@
   background-size: cover;
   background-position: center;
 }
-
+body {
+  background-image: url("/img/fondoazul.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 .logo-image {
   height: 110px;
