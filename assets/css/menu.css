@@ -1,48 +1,36 @@
-
- /* Estilos para pantallas más grandes */
- .bannerInicio {
-  background-image: url('/img/Last\ Version\ of\ the\ Banner\ Top\ Of\ Websit\ With\ TOP\ Word.svg');
+/* Estilos para pantallas más grandes */
+.bannerInicio {
+  background-image: url("/img/Last\ Version\ of\ the\ Banner\ Top\ Of\ Websit\ With\ TOP\ Word.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 body {
-  background-image: url('/img/fondo_azul.png');
+  background-image: url("/img/fondo_azul.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
- .logo-image {
-    height: 110px;
-    width: 310px;
-  }
+.logo-image {
+  height: 110px;
+  width: 310px;
+}
 
-  .azul {
-    background: radial-gradient(circle at top left, #0d356d, #2c4464);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
-    color: #fff;
-  }
+.azul {
+  background: radial-gradient(circle at top left, #0d356d, #2c4464);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
 
-  /* Media Query para pantallas más pequeñas */
-  @media (max-width: 768px) {
-    .logo-image {
-      height: 80px;
-      width: 250px;
-    }
-    .titulo{
-        display: none;
-    }
-    
-    .titulo2{
-        display: block;
-    }
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  body {
+    background-image: url("/img/fondo_azul.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
-  @media (min-width: 969px) {
-    /* Aquí puedes agregar tus estilos CSS para pantallas grandes */
-    .titulo2{
-        display: none;
-        align-items: center;
-    }
+  
 }
