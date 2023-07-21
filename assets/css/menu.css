@@ -1,6 +1,11 @@
 
  /* Estilos para pantallas más grandes */
- 
+ .bannerInicio {
+  background-image: url('/img/Last\ Version\ of\ the\ Banner\ Top\ Of\ Websit\ With\ TOP\ Word.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
  .logo-image {
     height: 110px;
     width: 310px;
