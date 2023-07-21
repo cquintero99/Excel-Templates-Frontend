@@ -6,7 +6,7 @@
   background-position: center;
 }
 body {
-  background-image: url("/img/fondo_azul.png");
+  background-image: url("/img/fondoazul.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -26,11 +26,6 @@ body {
 
 /* Media Query para pantallas más pequeñas */
 @media (max-width: 768px) {
-  body {
-    background-image: url("/img/fondo_azul.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
+  
   
 }
