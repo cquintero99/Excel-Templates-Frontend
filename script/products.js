@@ -11,7 +11,26 @@ function countdown() {
 
   setTimeout(countdown, 1000);
 }
- 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var video = document.getElementById('banner-video');
+
+  // Comprobar si el dispositivo es iOS
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+  // Reproducir automáticamente el video si no es un dispositivo iOS
+  if (!isIOS) {
+      video.play();
+  }
+
+  // Mostrar la imagen de vista previa y permitir la reproducción en clic para dispositivos iOS
+  video.addEventListener('click', function () {
+      if (isIOS) {
+          video.play();
+      }
+  });
+});
 
 const templete= document.getElementById("templete")
 
