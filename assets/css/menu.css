@@ -22,8 +22,9 @@
 /* Media Query para pantallas más pequeñas */
 @media (max-width: 768px) {
   .logos{
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
+    
   }
   
 }
