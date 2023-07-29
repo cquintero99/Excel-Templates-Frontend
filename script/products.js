@@ -99,6 +99,8 @@ function seeProducts(){
     }
     document.getElementById("products").innerHTML=body
 }
+
+
 /*
 <div class="col-md-4 mb-4">
     <div class="card card-pricing">
