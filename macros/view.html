@@ -22,8 +22,12 @@
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show   bg-gray-100">
-  <div class="min-height-300 bg-primary position-absolute w-100"></div>
+<body class="g-sidenav-show   bg-gray-100" onload="countdown()">
+    <p class="bg-success text-white text-center" behavior="" direction="">
+        Limited Time Offer 🔥
+        <span id="countdown"></span>
+      </p>
+  <div class="min-height-300 bg-success position-absolute w-100"></div>
   <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
@@ -118,7 +122,54 @@
       <a class="btn btn-primary btn-sm mb-0 w-100" href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
     </div>
   </aside>
-  <main class="main-content position-relative border-radius-lg ">
+  <main class="main-content position-relative border-radius-lg">
+    
+      <nav class="navbar-brand">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+          <div class="col-4 ">
+            <div class=" dropdown ">
+              <button class="btn btn-link  dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="currentColor" class="bi bi-list"
+                  viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+              </button>
+              <ul class="dropdown-menu text-dark" aria-labelledby="dropdownMenuButton">
+                <li>
+                  <a class="dropdown-item" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../index.html#list-products">Templetes</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../contact/index.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-4  d-flex justify-content-center">
+            <!-- Contenido de la segunda columna -->
+            <h2 class="text-success"> Excel <span class="text-yellow">Specialist</span></h2>
+    
+          </div>
+          <div class="col-4  text-end justify-content-end d-flex">
+            <!-- Contenido de la tercera columna -->
+            <a href="../cart/index.html" type="button" class=" btn btn-link text-white  ">
+              
+              <i class="ni ni-cart h2 mt-1 text-white"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                3
+              </span>
+            </a>
+    
+          </div>
+    
+        </div>
+    
+    
+      </nav>
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
       <div class="container-fluid py-1 px-3">
@@ -761,6 +812,7 @@
     </div>
   </div>
   <!--   Core JS Files   -->
+  <script src="../script/products.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
