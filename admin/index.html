@@ -23,7 +23,7 @@
   <title>
     Argon Dashboard 2 by Creative Tim
   </title>
-  
+
   <link rel="stylesheet" href="../assets/css/Spinner.css">
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -35,7 +35,7 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
-  
+
 </head>
 
 <body class="g-sidenav-show   bg-gray-100" onload="funcionesAdmin()">
@@ -48,7 +48,8 @@
         aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
         target="_blank">
-        <img src="../img/Last Version of the Banner Top Of Websit With TOP Word.svg" class="navbar-brand-img h-100" alt="main_logo">
+        <img src="../img/Last Version of the Banner Top Of Websit With TOP Word.svg" class="navbar-brand-img h-100"
+          alt="main_logo">
         <span class="ms-1 font-weight-bold">Excel Specialist</span>
       </a>
     </div>
@@ -124,18 +125,19 @@
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
+      <div class="overlay d-none" id="spinner">
+        <div class="spinner-border spinner" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
       
       <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
+        <div class="col-md-12 mt-4">
+          <div class="card">
+            <div class="card-header pb-0 px-3">
               <div class="row">
-                <div class="overlay d-none" id="spinner">
-                  <div class="spinner-border spinner" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                  </div>
-                </div>
-                
+
+
                 <div class="col-xl-9">
                   <h6>Products table</h6>
                 </div>
@@ -146,31 +148,33 @@
                 </div>
               </div>
             </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Title</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Description
-                      </th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Previous price</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Current price</th>
-                      <th class="text-secondary opacity-7"></th>
-                    </tr>
-                  </thead>
-                  <tbody id="dataTable">
+            <div class="card-body pt-4 p-3">
+              <ul class="list-group" id="listProduct">
+                <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
+                  <div class="d-flex flex-column">
+                    <h6 class="mb-3 text-sm">Oliver Liam</h6>
+                    <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Viking
+                        Burrito</span></span>
+                    <span class="mb-2 text-xs">Email Address: <span
+                        class="text-dark ms-sm-2 font-weight-bold">oliver@burrito.com</span></span>
+                    <span class="text-xs">VAT Number: <span
+                        class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
+                  </div>
+                  <div class="ms-auto text-end">
+                    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
+                        class="far fa-trash-alt me-2"></i>Delete</a>
+                    <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                        class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                  </div>
+                </li>
 
-
-                  </tbody>
-                </table>
-              </div>
+              </ul>
             </div>
           </div>
         </div>
+
       </div>
+      <!--MODAL SAVE MACRO-->
       <div class="col-md-4">
         <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form"
           aria-hidden="true">
@@ -197,20 +201,20 @@
                       <div class="input-group mb-3">
                         <textarea class="form-control" id="descripcion" placeholder="description" rows="3"></textarea>
                       </div>
-                      
+
                       <div class="row">
                         <div class="col-xl-6">
                           <label>Previous price </label>
                           <div class="input-group mb-3">
-                            <input type="text" id="precioAnterior" class="form-control" placeholder="Previous price" aria-label="title"
-                              aria-describedby="email-addon">
+                            <input type="text" id="precioAnterior" class="form-control" placeholder="Previous price"
+                              aria-label="title" aria-describedby="email-addon">
                           </div>
                         </div>
                         <div class="col-xl-6">
                           <label>Current price</label>
                           <div class="input-group mb-3">
-                            <input type="text" id="precioActual" class="form-control" placeholder="Current price" aria-label="title"
-                              aria-describedby="email-addon">
+                            <input type="text" id="precioActual" class="form-control" placeholder="Current price"
+                              aria-label="title" aria-describedby="email-addon">
                           </div>
                         </div>
                         <label>.ZIP file</label>
@@ -224,14 +228,68 @@
                         </div>
                     </form>
                   </div>
-                  
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+      <!--MODAL UPDATE MACRO-->
+      <div class="col-md-4">
+        <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="modal-form"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-body p-0">
+                <div class="card card-plain">
+                  <div class="card-header pb-0 text-left">
+                    <h3 class="font-weight-bolder text-info text-gradient">Edit Product</h3>
+
+                  </div>
+                  <div class="card-body">
+                    <form role="form text-left">
+
+                      <label>Title</label>
+                      <div class="input-group mb-3">
+                        <input type="text" id="tituloE" class="form-control" placeholder="Title" aria-label="title"
+                          aria-describedby="email-addon">
+                      </div>
+                      <label>Description</label>
+                      <div class="input-group mb-3">
+                        <textarea class="form-control" id="descripcionE" placeholder="description" rows="3"></textarea>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-xl-6">
+                          <label>Previous price </label>
+                          <div class="input-group mb-3">
+                            <input type="text" id="precioAnteriorE" class="form-control" placeholder="Previous price"
+                              aria-label="title" aria-describedby="email-addon">
+                          </div>
+                        </div>
+                        <div class="col-xl-6">
+                          <label>Current price</label>
+                          <div class="input-group mb-3">
+                            <input type="text" id="precioActualE" class="form-control" placeholder="Current price"
+                              aria-label="title" aria-describedby="email-addon">
+                          </div>
+                        </div>
+
+                        <div class="text-center">
+                          <button type="button" id="btnEdit"
+                            class="btn btn-round bg-gradient-success btn-lg w-100 mt-4 mb-0">Edit</button>
+                        </div>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <footer class="footer pt-3  ">
       <div class="container-fluid">
@@ -338,6 +396,7 @@
   <!--   Core JS Files   -->
   <script src="../script/spinner.js"></script>
   <script src="../script/lista.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>

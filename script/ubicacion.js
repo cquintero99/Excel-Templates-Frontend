@@ -37,13 +37,13 @@ function obtenerDireccionIP() {
   
   
   // Ejecutar las funciones y obtener la información del país y ubicación
-  obtenerDireccionIP()
-    .then(direccionIP => obtenerUbicacion(direccionIP))
-    .then(data => {
-      console.log('País:', data.pais);
-      console.log('Ubicación:', data.ubicacion);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+  // obtenerDireccionIP()
+  //   .then(direccionIP => obtenerUbicacion(direccionIP))
+  //   .then(data => {
+  //     console.log('País:', data.pais);
+  //     console.log('Ubicación:', data.ubicacion);
+  //   })
+  //   .catch(error => {
+  //     console.error('Error:', error);
+  //   });
   
