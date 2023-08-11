@@ -1,83 +1,83 @@
 const urlBackend = "https://excel-specialist-f5d92d48d514.herokuapp.com/"
 async function login(data) {
-    const result = await fetch(urlBackend + 'user/login', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-type': 'application/json ',
-            'Access-Control-Allow-Headers': 'Authorization',
-            'Cache-Control': 'no-store'
-        },
-        cache: 'no-store'
-    })
+  const result = await fetch(urlBackend + 'user/login', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-type': 'application/json ',
+      'Access-Control-Allow-Headers': 'Authorization',
+      'Cache-Control': 'no-store'
+    },
+    cache: 'no-store'
+  })
 
-    return result;
+  return result;
 }
 // Asegurarse de que el documento HTML esté completamente cargado
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // Obtener referencias a los elementos del formulario
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const loginButton = document.getElementById("login");
+  // Obtener referencias a los elementos del formulario
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const loginButton = document.getElementById("login");
 
-    // Agregar un listener al botón para manejar el evento de envío del formulario
-    loginButton.addEventListener("click", function(event) {
-        event.preventDefault();  // Evitar el comportamiento por defecto del formulario
-      activarSpinner()
-        // Obtener los valores de los campos de entrada
-        const email = emailInput.value;
-        const password = passwordInput.value;
+  // Agregar un listener al botón para manejar el evento de envío del formulario
+  loginButton.addEventListener("click", function (event) {
+    event.preventDefault();  // Evitar el comportamiento por defecto del formulario
+    activarSpinner()
+    // Obtener los valores de los campos de entrada
+    const email = emailInput.value;
+    const password = passwordInput.value;
 
-        // Crear un objeto con los datos del formulario
-        const usuario = {
-            email: email,
-            password: password
-        };
-        console.log(usuario)
-        // Aquí puedes realizar acciones con los datos, como enviarlos a través de una solicitud Fetch
+    // Crear un objeto con los datos del formulario
+    const usuario = {
+      email: email,
+      password: password
+    };
+    console.log(usuario)
+    // Aquí puedes realizar acciones con los datos, como enviarlos a través de una solicitud Fetch
 
-        // Ejemplo de cómo mostrar los datos en la consola
-        login(usuario)
-        .then(response => response)
-        .then(JWT => {
-            
-            if (JWT.status === 200 && JWT.headers.has('Authorization')) {
-                const bearerToken = JWT.headers.get('Authorization');
-                const token = bearerToken.replace('Bearer ', '');
+    // Ejemplo de cómo mostrar los datos en la consola
+    login(usuario)
+      .then(response => response)
+      .then(JWT => {
 
-
+        if (JWT.status === 200 && JWT.headers.has('Authorization')) {
+          const bearerToken = JWT.headers.get('Authorization');
+          const token = bearerToken.replace('Bearer ', '');
 
 
 
-                localStorage.setItem('token', token);
-                localStorage.setItem("data", JSON.stringify(parseJwt(token)))
 
-               window.location.href="admin/index.html"
-              //alert("Bien")
-            } else {
-                alert("contraseña incorrecta")
-            }
-        })
-        .catch(err=>{
-          console.log(err)
-          desactivarSpinner()
-        })
-        .finally(final=>{
-          desactivarSpinner()
-        })
-    });
+
+          localStorage.setItem('token', token);
+          localStorage.setItem("data", JSON.stringify(parseJwt(token)))
+
+          window.location.href = "admin/index.html"
+          //alert("Bien")
+        } else {
+          alert("contraseña incorrecta")
+        }
+      })
+      .catch(err => {
+        console.log(err)
+        desactivarSpinner()
+      })
+      .finally(final => {
+        desactivarSpinner()
+      })
+  });
 });
 
 
 function parseJwt(token) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
 
-    return JSON.parse(jsonPayload);
+  return JSON.parse(jsonPayload);
 }
 function countdown() {
   var now = new Date();
@@ -92,7 +92,30 @@ function countdown() {
 
   setTimeout(countdown, 1000);
 }
+function agregarCarrito300() {
 
+  const product = {
+    id:0,
+    titulo: "300 Excel Template",
+    descripcion: "300 Excel Template",
+    precioActual: "35.99",
+    precioAnterior: "49.00"
+  }
+
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  const productoYaEnCarrito = carrito.find(producto => producto.id === product.id);
+  if (productoYaEnCarrito) {
+    console.log('Este producto ya está en el carrito.');
+    return;
+  }
+
+  carrito.push(product);
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+  console.log('Producto agregado al carrito:', product);
+
+
+}
 
 // document.addEventListener('DOMContentLoaded', function () {
 //   var video = document.getElementById('banner-video');

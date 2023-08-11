@@ -23,7 +23,8 @@ listaMacros();
 const imagenMacro = document.getElementById("imagenMacro");
 console.log("El ID es:", id);
 function listaMacros() {
-  listaProductosIndex()
+  if(id!=null){
+    listaProductosIndex()
     .then((res) => res.json())
     .then((data) => {
       let body = "";
@@ -66,6 +67,38 @@ function listaMacros() {
     .catch((err) => {
       console.log(err);
     });
+  }
+  
+}
+function agregarCarrito(id) {
+  listaProductosIndex()
+      .then(response => response.json())
+      .then(productos => {
+          console.log(productos)
+          const productoSeleccionado = productos.find(producto => producto.id === id);
+
+          if (!productoSeleccionado) {
+              console.log('Producto no encontrado.');
+              return;
+          }
+          let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+          const productoYaEnCarrito = carrito.find(producto => producto.id === id);
+          if (productoYaEnCarrito) {
+              console.log('Este producto ya está en el carrito.');
+              return;
+          }
+      
+          carrito.push(productoSeleccionado);
+          localStorage.setItem('carrito', JSON.stringify(carrito));
+          console.log('Producto agregado al carrito:', productoSeleccionado);
+      })
+      .catch(err => {
+          console.log(err)
+      })
+
+
+ 
 }
 function countdown() {
   var now = new Date();
