@@ -21,10 +21,11 @@ async function listaProductosIndex() {
           <div class="card-header bg-success text-center pt-4 pb-5 position-relative">
             <div class="z-index-1 position-relative">
               <h5 class="text-white">EXCEL MACRO'S VISUAL BASIC</h5>
+              <h6 class="text-danger text-decoration-line-through"><small>$</small>${product.precioAnterior} USD <small></h6>
+           
               <h1 class="text-white mt-2 mb-0">
-              $</small>${product.precioActual}</h1>
+              $</small>${product.precioActual} USD</h1>
 
-              <h6 class="text-white text-decoration-line-through"><small>$</small>${product.precioAnterior}  <small></h6>
             </div>
           </div>
           <div class="position-relative mt-n5" style="height: 50px;">
@@ -63,6 +64,6 @@ async function listaProductosIndex() {
       document.getElementById("macros").innerHTML = body
     })
     .catch(err=>{
-      alert("error")
+      console.log(err)
     })
   }

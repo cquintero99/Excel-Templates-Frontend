@@ -1,4 +1,7 @@
 /* Estilos para pantallas más grandes */
+body {
+  user-select: none;
+}
 .bannerInicio {
   background-image: url("/img/Last\ Version\ of\ the\ Banner\ Top\ Of\ Websit\ With\ TOP\ Word.svg");
   background-repeat: no-repeat;

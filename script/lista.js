@@ -1,4 +1,4 @@
-const urlBackend = "http://localhost:8080/";
+const urlBackend = "https://excel-specialist-f5d92d48d514.herokuapp.com/";
 
 async function listaProductos() {
   const token = localStorage.getItem("token");
