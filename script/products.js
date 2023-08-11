@@ -106,10 +106,24 @@ function agregarCarrito300() {
 
   const productoYaEnCarrito = carrito.find(producto => producto.id === product.id);
   if (productoYaEnCarrito) {
-    console.log('Este producto ya está en el carrito.');
+    Toastify({
+      text: "it's already in the cart.",
+      className: "info",
+      destination: "./cart/index.html",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      }
+    }).showToast();
     return;
   }
-
+  Toastify({
+    text: " was added to your cart",
+    className: "info",
+    destination: "./cart/index.html",
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    }
+  }).showToast();
   carrito.push(product);
   localStorage.setItem('carrito', JSON.stringify(carrito));
   console.log('Producto agregado al carrito:', product);

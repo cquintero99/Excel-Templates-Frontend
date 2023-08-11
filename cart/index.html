@@ -21,6 +21,7 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/cart.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body class="g-sidenav-show  bg-white"  onload="countdown()">
@@ -58,10 +59,7 @@
               <!-- Contenido de la tercera columna -->
               <a href="./index.html" type="button" class=" btn btn-link  ">
                 <i class="ni ni-cart h3"></i>
-                  <span
-                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
-                      3
-                  </span>
+                <span id="items"></span>
               </a>
               
           </div>
@@ -248,6 +246,7 @@
   <!-- Footer -->
 
   <!--   Core JS Files   -->
+  <script src="../script/itemsCart.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -255,6 +254,7 @@
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <script src="../script/macros.js"></script>
   <script src="../script/cart.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   
   <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
