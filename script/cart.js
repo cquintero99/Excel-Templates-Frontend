@@ -82,7 +82,7 @@ function eliminarProductoCarrito(id) {
     carrito.splice(productoIndex, 1);
     localStorage.setItem('carrito', JSON.stringify(carrito));
     cargarListaProductos()
-    
+    items()
     Toastify({
         text: "remove  from cart.",
         className: "info",
