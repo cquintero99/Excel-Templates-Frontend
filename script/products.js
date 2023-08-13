@@ -1,4 +1,4 @@
-const urlBackend = "http://localhost:8080/"
+const urlBackend = "https://4ad4-186-103-46-16.ngrok-free.app/"
 async function login(data) {
   const result = await fetch(urlBackend + 'user/login', {
     method: 'POST',
