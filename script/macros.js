@@ -1,4 +1,4 @@
-const urlBackend = "https://excel-specialist-f5d92d48d514.herokuapp.com/";
+const urlBackend = "http://localhost:8080/";
 
 async function listaProductosIndex() {
   const result = await fetch(urlBackend + "producto", {

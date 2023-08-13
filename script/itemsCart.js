@@ -8,5 +8,7 @@ function items(){
         style="width: 20px; height: 20px; line-height: 20px; text-align: center;">
       ${carrito.length}
   </span>`
+    }else{
+      document.getElementById("items").innerHTML=""
     }
 }
