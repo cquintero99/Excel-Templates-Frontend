@@ -144,11 +144,11 @@ checkout.addEventListener("click", () => {
                 }
                 console.log(precioTotal)
                 const order = {
-                    price:precioTotal,
+                    price:precioTotal.toFixed(2),
                     currency:"USD",
                     method:"paypal",
                     intent:"sale",
-                    description:"excel specialit order price"+precioTotal
+                    description:"excel specialit order price"
                 }
                 payPaypal(order)
                 .then(response=>response.text())
