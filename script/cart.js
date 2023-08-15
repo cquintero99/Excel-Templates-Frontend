@@ -108,3 +108,66 @@ function eliminarProductoCarrito(id) {
         },
     }).showToast();
 }
+
+
+async function payPaypal(order) {
+    const resul = await fetch(urlBackend + "pay", {
+        method: 'POST',
+        body: JSON.stringify(order),
+        headers: {
+            "Content-type": "application/json"
+        }
+    })
+    return resul;
+}
+const checkout = document.getElementById("checkout")
+checkout.addEventListener("click", () => {
+    activarSpinner()
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let precioTotal = 0;
+    listaProductosIndex()
+        .then((response) => response.json())
+        .then((productos) => {
+            console.log(productos);
+            if (carrito.length > 0) {
+                for (let index = 0; index < carrito.length; index++) {
+                    if (carrito[index].id == 0) {
+                        precioTotal += Number(35.99);
+
+                    } else {
+                        const productoSeleccionado = productos.find(
+                            (producto) => producto.id === carrito[index].id
+                        );
+                        precioTotal += Number(productoSeleccionado.precioActual);
+
+                    }
+                }
+                console.log(precioTotal)
+                const order = {
+                    price:precioTotal,
+                    currency:"USD",
+                    method:"paypal",
+                    intent:"sale",
+                    description:"excel specialit order price"+precioTotal
+                }
+                payPaypal(order)
+                .then(response=>response.text())
+                .then(data=>{
+                    desactivarSpinner()
+                    console.log(data)
+                    window.location.href=data
+                })
+                .catch(err=>{
+                    console.log(err)
+                    desactivarSpinner()
+                })
+
+
+            }
+        })
+        .catch((err) => {
+            desactivarSpinner()
+            console.log(err);
+        });
+
+})

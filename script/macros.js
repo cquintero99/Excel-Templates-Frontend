@@ -1,4 +1,4 @@
-const urlBackend = "https://4ad4-186-103-46-16.ngrok-free.app/";
+const urlBackend = "http://localhost:8080/";
 
 async function listaProductosIndex() {
   const result = await fetch(urlBackend + "producto", {

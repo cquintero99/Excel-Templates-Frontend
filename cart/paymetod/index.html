@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../img/Banner Top Of Website.svg">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../../img/Banner Top Of Website.svg">
     <title>
         Excel Specialist
     </title>
@@ -13,14 +13,14 @@
   <link rel="stylesheet" href="../assets/css/menu.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/cart.css">
+  <link id="pagestyle" href="../../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/cart.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
@@ -70,61 +70,176 @@
   </nav>
   
   <main class="main-content position-relative border-radius-lg ">
-
+    
     
     <div class="container-fluid py-4 ">
-      <div class="row mt-4">
-        <div class="card  ">
-            <div class="row ">
-                <div class="col-md-8 cart  text-dark   fw-bold">
-                    <div class="title">
-                        <div class="row">
-                            <div class="col">
-                                <h4><b>Shopping Cart</b></h4>
-                            </div>
-                            <div class="col align-self-center text-right text-muted">items</div>
+      <div class="row">
+        
+        <div class="col-md-8">
+          <h5>payment methods</h5>
+          <div class="accordion accordion-flush border" id="accordionFlushExample">
+            <div class="accordion-item ">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed h3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  PAYPAL
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="card">
+                    
+                    <div class="card-body">
+                      <p class="text-uppercase text-sm text-dark">User Information</p>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Names</label>
+                            <input class="form-control" type="text" value="lucky jesse">
+                          </div>
                         </div>
+                        
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Phone</label>
+                            <input class="form-control" type="text" value=" +1 (855) 315-8475">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Email address</label>
+                            <input class="form-control" type="email" value="jesse@example.com">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">DNI</label>
+                            <input class="form-control" type="number" value="3521557">
+                          </div>
+                        </div>
+                        
+                      </div>
+                      <hr class="horizontal dark">
+                      <p class="text-uppercase text-sm text-dark">Contact Information</p>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Address</label>
+                            <input class="form-control" type="text" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">City</label>
+                            <input class="form-control" type="text" value="New York">
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Country</label>
+                            <input class="form-control" type="text" value="United States">
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Postal code</label>
+                            <input class="form-control" type="text" value="437300">
+                          </div>
+                        </div>
+                      </div>
+                      <hr class="horizontal dark">
+                      <p class="text-uppercase text-sm">About me</p>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">About me</label>
+                            <input class="form-control" type="text" value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source.">
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div id="listaProductos">
-                      
-                      <h3 class="text-center text-uppercase">empty cart</h3>
-                    </div>
-                    <div class="back-to-shop"><a href="../index.html">&leftarrow;</a><span class="text-muted">Back
-                            to shop</span></div>
+                  </div>
+               </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Accordion Item #2
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-profile">
+            <img src="../assets/img/bg-profile.jpg" alt="Image placeholder" class="card-img-top">
+            <div class="row justify-content-center">
+              <div class="col-4 col-lg-4 order-lg-2">
+                <div class="mt-n4 mt-lg-n6 mb-4 mb-lg-0">
+                  <a href="javascript:;">
+                    <img src="../assets/img/team-2.jpg" class="rounded-circle img-fluid border border-2 border-white">
+                  </a>
                 </div>
-                <!-- <div class="col-md-4 banner">
-
-                </div> -->
-                <div class="col-md-4 summary  bg-white border-start ">
-                    <div>
-                        <h5><b>Summary</b></h5>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
+              <div class="d-flex justify-content-between">
+                <a href="javascript:;" class="btn btn-sm btn-info mb-0 d-none d-lg-block">Connect</a>
+                <a href="javascript:;" class="btn btn-sm btn-info mb-0 d-block d-lg-none"><i class="ni ni-collection"></i></a>
+                <a href="javascript:;" class="btn btn-sm btn-dark float-right mb-0 d-none d-lg-block">Message</a>
+                <a href="javascript:;" class="btn btn-sm btn-dark float-right mb-0 d-block d-lg-none"><i class="ni ni-email-83"></i></a>
+              </div>
+            </div>
+            <div class="card-body pt-0">
+              <div class="row">
+                <div class="col">
+                  <div class="d-flex justify-content-center">
+                    <div class="d-grid text-center">
+                      <span class="text-lg font-weight-bolder">22</span>
+                      <span class="text-sm opacity-8">Friends</span>
                     </div>
-                    <hr>
-                    <div class="row" id="numeroItems">
-                         </div>
-                    <form>
-                        <p>EMAIL</p>
-                        <input id="code" type="email" placeholder="@example.com">
-                    </form>
-                    <div class="row" id="total" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;" >
-                       
+                    <div class="d-grid text-center mx-4">
+                      <span class="text-lg font-weight-bolder">10</span>
+                      <span class="text-sm opacity-8">Photos</span>
                     </div>
-                    <div class="text-center">
-                        <button class="btn2  ">CHECKOUT</button>
+                    <div class="d-grid text-center">
+                      <span class="text-lg font-weight-bolder">89</span>
+                      <span class="text-sm opacity-8">Comments</span>
                     </div>
-                </div>
-                <div class="col-md-6"></div>
-                <div class="col-md-12 ">
-                  <div class="card bg-white">
-                    <img src="../img/Banner Pat.png" class="card-img" alt="...">
-                    <div class="card-img-overlay">
-                     </div>
                   </div>
                 </div>
+              </div>
+              <div class="text-center mt-4">
+                <h5>
+                  Mark Davis<span class="font-weight-light">, 35</span>
+                </h5>
+                <div class="h6 font-weight-300">
+                  <i class="ni location_pin mr-2"></i>Bucharest, Romania
+                </div>
+                <div class="h6 mt-4">
+                  <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+                </div>
+                <div>
+                  <i class="ni education_hat mr-2"></i>University of Computer Science
+                </div>
+              </div>
             </div>
-
+          </div>
         </div>
-
       </div>
       
 
@@ -223,14 +338,14 @@
   <!-- Footer -->
 
   <!--   Core JS Files   -->
-  <script src="../script/itemsCart.js"></script>
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
-  <script src="../script/macros.js"></script>
-  <script src="../script/cart.js"></script>
+  <script src="../../script/itemsCart.js"></script>
+  <script src="../../assets/js/core/popper.min.js"></script>
+  <script src="../../assets/js/core/bootstrap.min.js"></script>
+  <script src="../../assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="../../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="../../assets/js/plugins/chartjs.min.js"></script>
+  <script src="../../script/macros.js"></script>
+  <script src="../../script/cart.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   
   <script>
