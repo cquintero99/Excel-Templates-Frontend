@@ -76,7 +76,10 @@ function cargarListaProductos() {
                     <div class="col h6">TOTAL PRICE</div>
                         <div class="col text-right"  >
                         <small class="h5" >$ ${precioTotal.toFixed(2)} USD</small>
-                         </div>`;
+                         </div>
+                         <div class="text-center">
+                <button class="btn2  " id="checkout" onclick="checkout(${precioTotal.toFixed(2)})">CHECKOUT</button>
+              </div>`;
                 }
             })
             .catch((err) => {
@@ -110,64 +113,70 @@ function eliminarProductoCarrito(id) {
 }
 
 
-async function payPaypal(order) {
-    const resul = await fetch(urlBackend + "pay", {
-        method: 'POST',
-        body: JSON.stringify(order),
-        headers: {
-            "Content-type": "application/json"
-        }
-    })
-    return resul;
-}
-const checkout = document.getElementById("checkout")
-checkout.addEventListener("click", () => {
-    activarSpinner()
+
+const emailCheckout=document.getElementById("emailCheckout")
+const errorEmail=document.getElementById("errorEmail")
+
+function checkout(total){
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    let precioTotal = 0;
-    listaProductosIndex()
-        .then((response) => response.json())
-        .then((productos) => {
-            console.log(productos);
-            if (carrito.length > 0) {
-                for (let index = 0; index < carrito.length; index++) {
-                    if (carrito[index].id == 0) {
-                        precioTotal += Number(35.99);
-
-                    } else {
-                        const productoSeleccionado = productos.find(
-                            (producto) => producto.id === carrito[index].id
-                        );
-                        precioTotal += Number(productoSeleccionado.precioActual);
-
-                    }
-                }
-                console.log(precioTotal)
-                const order = {
-                    price:precioTotal.toFixed(2),
-                    currency:"USD",
-                    method:"paypal",
-                    intent:"sale",
-                    description:"excel specialit order price"
-                }
-                payPaypal(order)
-                .then(response=>response.text())
-                .then(data=>{
-                    desactivarSpinner()
-                    console.log(data)
-                    window.location.href=data
-                })
-                .catch(err=>{
-                    console.log(err)
-                    desactivarSpinner()
-                })
+    if(carrito.length>0 ){
+        if(emailCheckout.value!==""){
+            window.location.href="./paymetod/index.html?email="+emailCheckout.value+"&total="+total
+        }else{
+            errorEmail.innerHTML="enter your email"
+        }
+        
+    }
+}
 
 
-            }
-        })
-        .catch((err) => {
-            desactivarSpinner()
-            console.log(err);
-        });
+// checkout.addEventListener("click", () => {
+//     activarSpinner()
+//     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+//     let precioTotal = 0;
+//     listaProductosIndex()
+//         .then((response) => response.json())
+//         .then((productos) => {
+//             console.log(productos);
+//             if (carrito.length > 0) {
+//                 for (let index = 0; index < carrito.length; index++) {
+//                     if (carrito[index].id == 0) {
+//                         precioTotal += Number(35.99);
 
-})
+//                     } else {
+//                         const productoSeleccionado = productos.find(
+//                             (producto) => producto.id === carrito[index].id
+//                         );
+//                         precioTotal += Number(productoSeleccionado.precioActual);
+
+//                     }
+//                 }
+//                 console.log(precioTotal)
+//                 const order = {
+//                     price:precioTotal.toFixed(2),
+//                     currency:"USD",
+//                     method:"paypal",
+//                     intent:"sale",
+//                     description:"excel specialit order price"
+//                 }
+//                 payPaypal(order)
+//                 .then(response=>response.text())
+//                 .then(data=>{
+//                     desactivarSpinner()
+//                     console.log(data)
+//                     window.location.href=data
+//                 })
+//                 .catch(err=>{
+//                     console.log(err)
+//                     desactivarSpinner()
+//                 })
+
+
+//             }
+//         })
+//         .catch((err) => {
+//             desactivarSpinner()
+//             console.log(err);
+//         });
+
+// })
