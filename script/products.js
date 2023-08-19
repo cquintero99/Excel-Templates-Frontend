@@ -1,4 +1,4 @@
-const urlBackend = "http://localhost:8080/"
+
 async function login(data) {
   const result = await fetch(urlBackend + 'user/login', {
     method: 'POST',

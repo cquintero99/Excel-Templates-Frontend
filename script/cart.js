@@ -13,6 +13,7 @@ cargarListaProductos();
 var numeroItems = document.getElementById("numeroItems");
 
 function cargarListaProductos() {
+    activarSpinner()
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     let body = "";
     if (carrito.length >= 1) {
@@ -84,7 +85,12 @@ function cargarListaProductos() {
             })
             .catch((err) => {
                 console.log(err);
-            });
+                desactivarSpinner()
+            })
+            .finally(final=>{
+                desactivarSpinner()
+            })
+            
     } else {
         listaProductos.innerHTML = `<h3 class="text-center text-uppercase">empty cart</h3>`;
     }

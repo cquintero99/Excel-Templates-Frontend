@@ -25,58 +25,87 @@ document.addEventListener("DOMContentLoaded", function () {
                 field.classList.remove("is-invalid");
             }
         });
-
-        if (isValid) {
-            activarSpinner()
-                let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-                let precioTotal = 0;
-                listaProductosIndex()
-                    .then((response) => response.json())
-                    .then((productos) => {
-                        console.log(productos);
-                        if (carrito.length > 0) {
-                            for (let index = 0; index < carrito.length; index++) {
-                                if (carrito[index].id == 0) {
-                                    precioTotal += Number(35.99);
-            
-                                } else {
-                                    const productoSeleccionado = productos.find(
-                                        (producto) => producto.id === carrito[index].id
-                                    );
-                                    precioTotal += Number(productoSeleccionado.precioActual);
-            
-                                }
-                            }
-                            console.log(precioTotal)
-                            const order = {
-                                price:precioTotal.toFixed(2),
-                                currency:"USD",
-                                method:"paypal",
-                                intent:"sale",
-                                description:"excel specialit order price"
-                            }
-                            payPaypal(order)
-                            .then(response=>response.text())
-                            .then(data=>{
-                                desactivarSpinner()
-                                console.log(data)
-                                window.location.href=data
-                            })
-                            .catch(err=>{
-                                console.log(err)
-                                desactivarSpinner()
-                            })
-            
-            
-                        }
-                    })
-                    .catch((err) => {
-                        desactivarSpinner()
-                        console.log(err);
-                    });
+        if(isValid){
+            validarFormulario()
         }
-    });
+
+        
+    })
+
+   
+
 });
+
+function validarFormulario() {
+        activarSpinner()
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        let precioTotal = 0;
+        listaProductosIndex()
+            .then((response) => response.json())
+            .then((productos) => {
+                console.log(productos);
+                if (carrito.length > 0) {
+                    for (let index = 0; index < carrito.length; index++) {
+                        if (carrito[index].id == 0) {
+                            precioTotal += Number(35.99);
+
+                        } else {
+                            const productoSeleccionado = productos.find(
+                                (producto) => producto.id === carrito[index].id
+                            );
+                            precioTotal += Number(productoSeleccionado.precioActual);
+
+                        }
+                    }
+                    const names = document.getElementById("names").value;
+                    const phone = document.getElementById("phone").value;
+                    const email = document.getElementById("email").value;
+                    const dni = document.getElementById("dni").value;
+                    const address = document.getElementById("address").value;
+                    const city = document.getElementById("city").value;
+                    const country = document.getElementById("country").value;
+                    const postalCode = document.getElementById("postalCode").value;
+                    const realizarOrder = {
+                        order: {
+                            price: precioTotal.toFixed(2),
+                            currency: "USD",
+                            method: "paypal",
+                            intent: "sale",
+                            description: "excel specialit order price"
+                        },
+                        checkout: {
+                            names: names,
+                            phone: phone,
+                            email: email,
+                            dni: dni,
+                            address: address,
+                            city: city,
+                            country: country,
+                            postalCode: postalCode
+
+                        }
+                    }
+                    payPaypal(realizarOrder)
+                        .then(response => response.text())
+                        .then(data => {
+                            desactivarSpinner()
+                            console.log(data)
+                            window.location.href = data
+                        })
+                        .catch(err => {
+                            console.log(err)
+                            desactivarSpinner()
+                        })
+
+
+                }
+            })
+            .catch((err) => {
+                desactivarSpinner()
+                console.log(err);
+            });
+    
+}
 
 summary()
 function summary() {

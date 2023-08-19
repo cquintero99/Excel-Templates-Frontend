@@ -10,6 +10,7 @@
         Excel Specialist
     </title>
   <!--     Fonts and icons     -->
+  <link rel="stylesheet" href="../../assets/css/Spinner.css">
   <link rel="stylesheet" href="../../assets/css/menu.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
@@ -79,7 +80,22 @@
         </div>
     </div>
      <h1>ORDER SUCCESS</h1>
-      
+     <div class="col-md-12 cart  text-dark   fw-bold">
+      <div class="title">
+        <div class="row">
+          <div class="col">
+            <h4><b>Products</b></h4>
+          </div>
+          <div class="col align-self-center text-right text-muted">items</div>
+        </div>
+      </div>
+      <div id="listaProductos">
+
+        <h3 class="text-center text-uppercase">empty </h3>
+      </div>
+      <div class="back-to-shop"><a href="../index.html">&leftarrow;</a><span class="text-muted">Back
+          </span></div>
+    </div>
 
       
     </div>
@@ -176,10 +192,10 @@
   <!-- Footer -->
 
   <!--   Core JS Files   -->
+  <script src="../../script/urlBackend.js"></script>
   <script src="../../script/spinner.js"></script>
-  <script src="../../script/itemsCart.js"></script>
+  <script src="../../script/success.js"></script>
   <script src="../../script/macros.js"></script>
-  <script src="../../script/checkout.js"></script>
   <script src="../../assets/js/core/popper.min.js"></script>
   <script src="../../assets/js/core/bootstrap.min.js"></script>
   <script src="../../assets/js/plugins/perfect-scrollbar.min.js"></script>

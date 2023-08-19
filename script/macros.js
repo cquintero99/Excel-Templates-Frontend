@@ -1,4 +1,4 @@
-const urlBackend = "http://localhost:8080/";
+
 
 async function listaProductosIndex() {
   const result = await fetch(urlBackend + "producto", {
