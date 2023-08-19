@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../img/Banner Top Of Website.svg">
+  <title>
+    Excel Specialist
+  </title>
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" href="../assets/css/Spinner.css">
+  <link rel="stylesheet" href="../assets/css/menu.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/cart.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body class="g-sidenav-show  bg-white" onload="countdown()">
+  <p class="bg-success text-white text-center" behavior="" direction="">
+    Limited Time Offer 🔥
+    <span id="countdown"></span>
+  </p>
+  <nav class="navbar-brand">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <div class="col-4 ">
+        <div class=" dropdown ">
+          <button class="btn btn-link  dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="ni ni-bullet-list-67 h3"></i>
+          </button>
+          <ul class="dropdown-menu text-dark" aria-labelledby="dropdownMenuButton">
+            <li>
+              <a class="dropdown-item" aria-current="page" href="../index.html">Home</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="../index.html#list-products">Templetes</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="../contact/index.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-4  d-flex justify-content-center">
+        <!-- Contenido de la segunda columna -->
+        <h2 class="text-success"> Excel <span class="text-yellow">Specialist</span></h2>
+
+      </div>
+      <div class="col-4  text-end justify-content-end d-flex">
+        <!-- Contenido de la tercera columna -->
+        <a href="./index.html" type="button" class=" btn btn-link  ">
+          <i class="ni ni-cart h3"></i>
+          <span id="items"></span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </nav>
+
+  <main class="main-content position-relative border-radius-lg ">
+
+
+    <div class="container-fluid py-4 ">
+      
+      <div class="row mt-4">
+        <div class="card  ">
+          <div class="row ">
+            <div class="overlay d-none" id="spinner">
+              <div class="spinner-border spinner" role="status">
+                  <span class="visually-hidden">Loading...</span>
+              </div>
+          </div>
+            <div class="col-md-8 cart  text-dark   fw-bold">
+              <div class="title">
+                <div class="row">
+                  <div class="col">
+                    <h4><b>Shopping Cart</b></h4>
+                  </div>
+                  <div class="col align-self-center text-right text-muted">items</div>
+                </div>
+              </div>
+              <div id="listaProductos">
+
+                <h3 class="text-center text-uppercase">empty cart</h3>
+              </div>
+              <div class="back-to-shop"><a href="../index.html">&leftarrow;</a><span class="text-muted">Back
+                  to shop</span></div>
+            </div>
+            <!-- <div class="col-md-4 banner">
+
+                </div> -->
+            <div class="col-md-4 summary  bg-white border-start ">
+              <div>
+                <h5><b>Summary</b></h5>
+              </div>
+              <hr>
+              <div class="row" id="numeroItems">
+              </div>
+              <form>
+                <p>EMAIL</p>
+                <input id="emailCheckout" class="form-control " type="email" placeholder="@example.com">
+                <p class="text-danger text-center" id="errorEmail"></p>
+              </form>
+              <div class="row" id="total" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+
+              </div>
+              
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-12 ">
+              <div class="card bg-white">
+                <img src="../img/Banner Pat.png" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="text-center text-dark  border-top">
+    <!-- Grid container -->
+    <div class="container">
+      <!-- Section: Links -->
+      <section class="mt-5">
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5">
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="">About us</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="">Products</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="">Contact</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-5" />
+
+      <!-- Section: Text -->
+      <section class="mb-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-12 text-justify">
+
+          </div>
+        </div>
+      </section>
+      <!-- Section: Text -->
+
+      <!-- Section: Social -->
+      <!-- <section class="text-center mb-5">
+            <a href="" class="text-white me-4">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="text-white me-4">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="text-white me-4">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="text-white me-4">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="text-white me-4">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="text-white me-4">
+                <i class="fab fa-github"></i>
+            </a>
+        </section> -->
+      <!-- Section: Social -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3 bg-success">
+
+      <span class="text-white ">
+        ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+      </span>
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  
+  <script src="../script/itemsCart.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <script src="../script/macros.js"></script>
+  <script src="../script/cart.js"></script>
+  <script src="../script/spinner.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <script>
+    var ctx1 = document.getElementById("chart-line").getContext("2d");
+
+    var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
+    gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
+    gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
+    new Chart(ctx1, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Mobile apps",
+          tension: 0.4,
+          borderWidth: 0,
+          pointRadius: 0,
+          borderColor: "#5e72e4",
+          backgroundColor: gradientStroke1,
+          borderWidth: 3,
+          fill: true,
+          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+          maxBarThickness: 6
+
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#fbfbfb',
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#ccc',
+              padding: 20,
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+  </script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+</body>
+
+</html>
